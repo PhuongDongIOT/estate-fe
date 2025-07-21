@@ -4,11 +4,11 @@ module.exports = {
       name: 'nextjs-app',
       script: 'npm',
       args: 'run start',
-      instances: 'max',
-      exec_mode: 'cluster',
+      instances: 1,
+      exec_mode: 'fork',
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
+      max_memory_restart: '500M',
       env: {
         NODE_ENV: 'production'
       }
