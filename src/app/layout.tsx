@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 import { ReactNode } from 'react';
 
 import { MainProvider } from '@/components/providers/MainProvider';
-import { MainLayout } from '@/components/templates/MainLayout';
+// import { MainLayout } from '@/components/templates/MainLayout';
 
 import { cn } from '@/lib/utils';
 
@@ -26,9 +26,9 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     <html lang="en">
       <body className={cn(inter.variable, 'font-primary')} suppressHydrationWarning>
         <MainProvider>
-          <MainLayout>
-            <main>{children}</main>
-          </MainLayout>
+          {/* <MainLayout> */}
+          <main>{children}</main>
+          {/* </MainLayout> */}
         </MainProvider>
       </body>
     </html>
