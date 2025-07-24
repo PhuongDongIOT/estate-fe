@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface EstateIntroProps {
+export type EstateIntroProps = {
   name: string;
   description: string;
   image: string;
@@ -8,7 +8,7 @@ interface EstateIntroProps {
   price: string;
   area?: string;
   tags?: string[];
-}
+};
 
 export const EstateIntro: React.FC<EstateIntroProps> = ({
   name,

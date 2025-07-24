@@ -1,6 +1,9 @@
 // import { AudioPlaylist } from "@/components/molecules/audio-playlist/audio-playlist";
 import { BackgroundVideo } from '@/components/molecules/background-video/background-video';
-import { EstateIntro } from '@/components/molecules/estate-intro/estate-intro';
+import {
+  EstateIntro,
+  type EstateIntroProps
+} from '@/components/molecules/estate-intro/estate-intro';
 import { HeroBanner } from '@/components/molecules/hero-banner/hero-banner';
 import { TitledSection } from '@/components/molecules/titled-section/titled-section';
 import { NewsCard, type NewsCardProps } from '@/components/organisms/new-card/new-card';
@@ -61,7 +64,7 @@ const tabItem: ProjectSearchBarProps = {
   ]
 };
 
-export const estateData = {
+const estateData: EstateIntroProps = {
   name: 'Biệt thự ven sông',
   description: 'Biệt thự cao cấp với không gian xanh, gần trung tâm, tiện ích đầy đủ.',
   image: '/images/estate.jpg',
