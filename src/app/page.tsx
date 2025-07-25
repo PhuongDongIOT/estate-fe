@@ -1,4 +1,6 @@
 // import { AudioPlaylist } from "@/components/molecules/audio-playlist/audio-playlist";
+import Image from 'next/image';
+
 import { BackgroundVideo } from '@/components/molecules/background-video/background-video';
 import {
   EstateIntro,
@@ -122,9 +124,27 @@ const HomePage = () => (
                   <NewsCard {...estateItem} />
                 </div>
               </div>
-              <div className="grid grid-cols-1 gap-4 px-4">
-                <NewsCard {...estateItem} />
-                <NewsCard {...estateItem} />
+              <div className="grid grid-cols-1 gap-4 px-4 group">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/estate.jpg"
+                    alt="Estate"
+                    width={1920}
+                    height={1080}
+                    objectFit="cover"
+                    className="h-full w-auto object-cover"
+                  />
+                  <div className="absolute top-0 left-0 w-full h-full z-10 px-8 py-4">
+                    <div className="w-0 h-full group-hover:px-8 group-hover:py-16 group-hover:border-y-2 group-hover:border-white group-hover:w-full transition-all duration-200 overflow-hidden">
+                      <div className="w-full h-full flex items-center justify-center group-hover:border-x-2 group-hover:border-white">
+                        <div>
+                          <p className="text-4xl font-light text-white">REAL ESTATE</p>
+                          <div className="w-56 h-[1px] bg-white"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </TitledSection>
@@ -132,12 +152,12 @@ const HomePage = () => (
       </div>
     </section>
     <section>
-      <div className="py-8">
+      <div className="py-0">
         <div className="max-w-8xl h-72 relative mx-auto overflow-hidden">
           <BackgroundVideo
             desktopSrc={linkStatic}
             mobileSrc={linkStatic}
-            className="relative bottom-0 left-0 w-full h-auto"
+            className="relative bottom-0 left-0 w-screen h-auto"
           />
         </div>
       </div>

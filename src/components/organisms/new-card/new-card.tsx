@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export interface NewsCardProps {
@@ -34,14 +35,21 @@ export const NewsCard: React.FC<NewsCardProps> = ({
     }`}
   >
     <div className={direction === 'horizontal' ? 'w-40 flex-shrink-0 relative' : 'relative'}>
-      <img
+      <Image
         src={image}
         alt={title}
+        width={1920}
+        height={1080}
         className={`object-cover ${
           direction === 'horizontal' ? 'h-full w-full' : 'w-full h-44'
-        } group-hover:brightness-90 transition`}
+        } group-hover:brightness-90 group-hover:blur-xs transition`}
         loading="lazy"
       />
+      <div className="absolute top-0 left-0 py-4 px-8 w-full h-full pointer-events -none z-20">
+        <div className="w-0 group-hover:w-full h-full border-b-2 border-white transition-all duration-500 group-hover:px-4 group-hover:py-2">
+          <div className="delay-300 mx-auto group-hover:w-16 opacity-0 transform -translate-y-1 group-hover:translate-y-0 group-hover:opacity-90 h-full border-b-2 border-white"></div>
+        </div>
+      </div>
       {category && (
         <span className="absolute top-2 left-2 bg-indigo-600 text-white text-xs px-3 py-1 rounded-full shadow">
           {category}
@@ -52,7 +60,13 @@ export const NewsCard: React.FC<NewsCardProps> = ({
     <div className={`p-4 ${direction === 'horizontal' ? 'flex-1' : ''}`}>
       <div className="flex items-center gap-2 mb-2">
         {avatar && (
-          <img src={avatar} alt={source} className="w-7 h-7 rounded-full border object-cover" />
+          <Image
+            width={1920}
+            height={1080}
+            src={avatar}
+            alt={source}
+            className="w-7 h-7 rounded-full border object-cover"
+          />
         )}
         <span className="text-xs text-gray-700 font-semibold flex items-center gap-1">
           {source}

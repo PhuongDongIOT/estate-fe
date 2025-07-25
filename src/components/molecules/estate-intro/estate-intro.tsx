@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 export type EstateIntroProps = {
@@ -25,8 +26,10 @@ export const EstateIntro: React.FC<EstateIntroProps> = ({
     itemType="https://schema.org/Residence"
   >
     <div className="md:w-1/2 w-full flex-shrink-0 relative">
-      <img
+      <Image
         className="h-56 md:h-full w-full object-cover transition duration-300"
+        width={1920}
+        height={1080}
         src={image}
         alt={`Ảnh bất động sản ${name}`}
         itemProp="image"
@@ -42,9 +45,11 @@ export const EstateIntro: React.FC<EstateIntroProps> = ({
       <div className="absolute bottom-2 right-2 group-hover:bottom-8 group-hover:right-8 transition duration-300 z-10 opacity-90 group-hover:opacity-100">
         <div className="flex gap-2">
           <div className="h-16">
-            <img
+            <Image
               className="h-full w-auto object-cover transition duration-300"
               src={image}
+              width={1920}
+              height={1080}
               alt={`Ảnh bất động sản ${name}`}
               itemProp="image"
               loading="lazy"
