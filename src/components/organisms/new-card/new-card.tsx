@@ -77,7 +77,7 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           )}
         </span>
       </div>
-      <h2 className="text-lg font-semibold text-blue-900 group-hover:text-indigo-700 transition line-clamp-2">
+      <h2 className="text-sm md:text-lg font-semibold text-blue-900 group-hover:text-indigo-700 transition line-clamp-2">
         {title}
       </h2>
       <div className="flex items-center justify-between mt-3">

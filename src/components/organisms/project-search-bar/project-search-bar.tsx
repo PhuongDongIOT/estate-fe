@@ -52,7 +52,7 @@ export const ProjectSearchBar: React.FC<ProjectSearchBarProps> = ({
           <button
             key={tab.value}
             onClick={() => setActiveTab(tab.value)}
-            className={`px-4 py-2 font-medium outline-none ${
+            className={`px-4 py-2 font-medium outline-none text-xs md:text-sm ${
               activeTab === tab.value
                 ? 'bg-slate-200/30 text-white'
                 : 'bg-slate-200/20 text-gray-300 hover:bg-slate-700 shadow-md '
@@ -63,7 +63,7 @@ export const ProjectSearchBar: React.FC<ProjectSearchBarProps> = ({
         ))}
       </div>
 
-      <div className="flex mb-4">
+      <div className="flex flex-col md:flex-row mb-4 gap-2 md:gap-0">
         <input
           type="text"
           placeholder={searchPlaceholder}
@@ -73,7 +73,7 @@ export const ProjectSearchBar: React.FC<ProjectSearchBarProps> = ({
         />
         <button
           onClick={handleSearch}
-          className="bg-indigo-600 text-white px-5 font-medium hover:bg-indigo-700"
+          className="bg-indigo-600 text-white py-2 px-5 font-medium hover:bg-indigo-700"
         >
           Tìm kiếm
         </button>

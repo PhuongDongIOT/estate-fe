@@ -1,13 +1,22 @@
 // import { AudioPlaylist } from "@/components/molecules/audio-playlist/audio-playlist";
+import { Phone, BadgeQuestionMark, Mailbox, SendHorizonal } from 'lucide-react';
 import Image from 'next/image';
 
 import { BackgroundVideo } from '@/components/molecules/background-video/background-video';
+import { BranchLocationCard } from '@/components/molecules/branch-location-card/branch-location-card';
+import { ContactInfo, ContactItem } from '@/components/molecules/contact-info/contact-info';
 import {
   EstateIntro,
   type EstateIntroProps
 } from '@/components/molecules/estate-intro/estate-intro';
 import { HeroBanner } from '@/components/molecules/hero-banner/hero-banner';
+import { HighlightTopicList } from '@/components/molecules/highlight-topic-list/highlight-topic-list';
+import { NewsCarousel } from '@/components/molecules/news-carousel/news-carousel';
+import { ProvinceColumn } from '@/components/molecules/province-column/province-column';
+import { SubscribeInput } from '@/components/molecules/subscribe-input/subscribe-input';
 import { TitledSection } from '@/components/molecules/titled-section/titled-section';
+import { VisualCarousel } from '@/components/molecules/visual-carousel/visual-carousel';
+import { CompanyInfoCard } from '@/components/organisms/company-info-card/company-info-card';
 import { NewsCard, type NewsCardProps } from '@/components/organisms/new-card/new-card';
 import {
   ProjectSearchBar,
@@ -19,7 +28,7 @@ const linkStatic = 'http://173.249.41.172:9000/mybucket/video.mp4';
 
 const itemHeroBanner = {
   backgroundImage: '/images/estate.jpg',
-  heightClass: 'h-[70vh] w-screen',
+  heightClass: 'h-[60vh] md:h-[70vh] w-screen',
   overlayEnabled: true,
   overlayColor: 'bg-black',
   overlayOpacity: 'bg-opacity-50',
@@ -66,6 +75,69 @@ const tabItem: ProjectSearchBarProps = {
   ]
 };
 
+const imageList = [
+  {
+    src: '/images/etienne.jpg',
+    title: 'Sunshine City',
+    subtitle: 'Không gian sống đẳng cấp',
+    label: 'Căn hộ'
+  },
+  {
+    src: '/images/estate.jpg',
+    title: 'Sunshine City',
+    subtitle: 'Không gian sống đẳng cấp',
+    label: 'Căn hộ'
+  },
+  {
+    src: '/images/etienne.jpg',
+    title: 'Sunshine City',
+    subtitle: 'Không gian sống đẳng cấp',
+    label: 'Căn hộ'
+  },
+  {
+    src: '/images/estate.jpg',
+    title: 'Sunshine City',
+    subtitle: 'Không gian sống đẳng cấp',
+    label: 'Căn hộ'
+  }
+];
+const visualCarousel = {
+  images: imageList,
+  autoplayDelay: 2000,
+  dragFree: true,
+  // className: "my-8",
+  slideClassName: 'shadow-xl'
+};
+
+const provinces = [
+  { name: 'TP. HCM', color: 'bg-red-500', image: '/images/estate.jpg' },
+  { name: 'Hà Nội', color: 'bg-blue-500', image: '/images/etienne.jpg' },
+  { name: 'Đà Nẵng', color: 'bg-green-500', image: '/images/estate.jpg' },
+  { name: 'Cần Thơ', color: 'bg-yellow-500', image: '/images/etienne.jpg' },
+  { name: 'Hải Phòng', color: 'bg-purple-500', image: '/images/estate.jpg' }
+];
+
+const newsItems = [
+  {
+    id: 1,
+    title: '200 Triệu Gửi Ngân Hàng Agribank Lãi Bao Nhiêu, Nên Gửi Kỳ Hạn Nào...',
+    image: '/images/estate.jpg',
+    avatar: '/images/estate.jpg'
+  },
+  {
+    id: 2,
+    title: 'The TEN: Khởi Nguyên Chuẩn Sống Thượng Lưu Độc Bản Tại Siêu Đô Thị...',
+    image: '/images/estate.jpg',
+    avatar: '/images/estate.jpg'
+  },
+  {
+    id: 3,
+    title: 'Vay Ngân Hàng Agribank 100 Triệu Lãi Suất Bao Nhiêu? Vay Tín Chấp Ha...',
+    image: '/images/estate.jpg',
+    avatar: '/images/estate.jpg'
+  }
+];
+
 const estateData: EstateIntroProps = {
   name: 'Biệt thự ven sông',
   description: 'Biệt thự cao cấp với không gian xanh, gần trung tâm, tiện ích đầy đủ.',
@@ -74,6 +146,18 @@ const estateData: EstateIntroProps = {
   price: 'Liên hệ',
   area: '500m²',
   tags: ['Sân vườn', 'Hồ bơi', 'An ninh 24/7']
+};
+
+const highlightTopicData = {
+  title: 'Chủ đề nổi bật',
+  topics: [
+    { title: 'Tin tức bất động sản', href: '/tin-tuc-bds' },
+    { title: 'Bất động sản Hà Nội', href: '/bds-ha-noi' },
+    { title: 'Bất động sản Hồ Chí Minh', href: '/bds-ho-chi-minh' },
+    { title: 'Báo cáo thị trường', href: '/bao-cao-thi-truong' },
+    { title: 'Mua bất động sản', href: '/mua-bds' }
+  ],
+  moreLink: '/tat-ca-chu-de'
 };
 
 const estateItem: NewsCardProps = {
@@ -88,8 +172,52 @@ const estateItem: NewsCardProps = {
   direction: 'horizontal'
 };
 
+const branchLocation = {
+  title: 'Chi nhánh TP. Hồ Chí Minh',
+  address: `Tầng 2, 3, Tháp B Tòa nhà Viettel, 285 Cách Mạng Tháng Tám,\nPhường Hòa Hưng, TP.HCM, Việt Nam`,
+  hotline: '1900 1881',
+  children: <button className="mt-1 text-blue-600 hover:underline text-sm">Xem bản đồ</button>
+};
+
+const propertyGuruInfo = {
+  logo: <img src={'/images/batdongsan-logo.svg'} alt="Logo" className="h-16" />,
+  companyName: 'CÔNG TY CỔ PHẦN PROPERTYGURU VIỆT NAM',
+  address: `Tầng 31, Keangnam Hanoi Landmark Tower,\nPhường Yên Hòa, Thành phố Hà Nội, Việt Nam`,
+  phones: ['(024) 3562 5939', '(024) 3562 5940'],
+  qrCodeSrc: '/images/qr-code.svg',
+  googlePlaySrc: '/images/google-play.png',
+  appStoreSrc: '/images/app-store.png'
+};
+
+const contacts: ContactItem[] = [
+  {
+    icon: <Phone className="w-6 h-6 text-gray-700" />,
+    label: 'Hotline',
+    value: '1900 1881'
+  },
+  {
+    icon: <BadgeQuestionMark className="w-6 h-6 text-gray-700" />,
+    label: 'Hỗ trợ khách hàng',
+    value: 'trogiup.batdongsan.com.vn',
+    link: 'https://trogiup.batdongsan.com.vn'
+  },
+  {
+    icon: <Mailbox className="w-6 h-6 text-gray-700" />,
+    label: 'Chăm sóc khách hàng',
+    value: 'hotro@batdongsan.com.vn',
+    link: 'mailto:hotro@batdongsan.com.vn'
+  }
+];
+
+const subscribeProps = {
+  title: 'Nhận thông tin mới',
+  placeholder: 'Nhập email để nhận tin khuyến mãi',
+  buttonColor: 'bg-blue-600 hover:bg-blue-700',
+  icon: <SendHorizonal size={16} />
+};
+
 const HomePage = () => (
-  <div className="relative flex flex-col items-center justify-center min-h-screen  bg-gradient-to-br from-white via-indigo-50 to-indigo-100 overflow-hidden">
+  <div className="relative min-h-screen  bg-gradient-to-br from-white via-indigo-50 to-indigo-100 overflow-hidden">
     {/* <div className="fixed bottom-2 right-2">
       <AudioPlaylist
         songs={[
@@ -125,7 +253,7 @@ const HomePage = () => (
                 </div>
               </div>
               <div className="grid grid-cols-1 gap-4 px-4 group">
-                <div className="w-full h-full relative">
+                <div className="w-full h-full relative mt-4 md:mt-0">
                   <Image
                     src="/images/estate.jpg"
                     alt="Estate"
@@ -134,7 +262,7 @@ const HomePage = () => (
                     objectFit="cover"
                     className="h-full w-auto object-cover"
                   />
-                  <div className="absolute top-0 left-0 w-full h-full z-10 px-8 py-4">
+                  <div className="absolute top-0 left-0 w-full h-full z-10 px-8 py-4 mt-4">
                     <div className="w-0 h-full group-hover:px-8 group-hover:py-16 group-hover:border-y-2 group-hover:border-white group-hover:w-full transition-all duration-200 overflow-hidden">
                       <div className="w-full h-full flex items-center justify-center group-hover:border-x-2 group-hover:border-white">
                         <div>
@@ -153,12 +281,19 @@ const HomePage = () => (
     </section>
     <section>
       <div className="py-0">
-        <div className="max-w-8xl h-72 relative mx-auto overflow-hidden">
-          <BackgroundVideo
-            desktopSrc={linkStatic}
-            mobileSrc={linkStatic}
-            className="relative bottom-0 left-0 w-screen h-auto"
-          />
+        <div className="max-w-8xl px-4 h-72 relative mx-auto overflow-hidden">
+          <div className="h-72 relative overflow-hidden">
+            <BackgroundVideo
+              desktopSrc={linkStatic}
+              mobileSrc={linkStatic}
+              className="relative bottom-0 left-0 w-screen h-auto"
+            />
+          </div>
+          <div className="top-0 left-0 absolute h-full w-full">
+            <div className="py-4 px-12">
+              <VisualCarousel {...visualCarousel} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -175,6 +310,72 @@ const HomePage = () => (
               <EstateIntro {...estateData} />
             </div>
           </TitledSection>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="flex h-[40vh] md:h-[60vh] w-screen">
+        <ProvinceColumn provinces={provinces} />
+      </div>
+    </section>
+    <section>
+      <div className="mx-auto max-w-8xl w-full">
+        <div className="py-8">
+          <TitledSection title="Tin tức">
+            <NewsCarousel items={newsItems} />
+          </TitledSection>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="mx-auto max-w-8xl w-full">
+        <div className="py-8">
+          <TitledSection title="Tin tức">
+            <NewsCarousel items={newsItems} />
+          </TitledSection>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="max-w-8xl w-full mx-auto px-4">
+        <div className="py-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4">
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+            <HighlightTopicList {...highlightTopicData} />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="py-8 w-full">
+        <div className="max-w-8xl w-full mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <BranchLocationCard {...branchLocation} />
+            <BranchLocationCard {...branchLocation} />
+            <BranchLocationCard {...branchLocation} />
+            <BranchLocationCard {...branchLocation} />
+            <BranchLocationCard {...branchLocation} />
+            <BranchLocationCard {...branchLocation} />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="py-2">
+        <div className="mx-auto max-w-8xl w-full px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <CompanyInfoCard {...propertyGuruInfo} />
+            <div className="md:col-span-2 w-full">
+              <ContactInfo contacts={contacts} />
+              <SubscribeInput {...subscribeProps} />
+            </div>
+          </div>
         </div>
       </div>
     </section>
