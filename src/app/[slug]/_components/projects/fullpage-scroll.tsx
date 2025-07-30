@@ -6,6 +6,7 @@ import { CheckCircle } from 'lucide-react';
 import React, { useRef, useEffect, useState } from 'react';
 
 import { BackgroundVideo } from '@/components/molecules/background-video/background-video';
+import { ImageCarouselVertical } from '@/components/molecules/image-carousel-vertical/image-carousel-vertical';
 import { ImageWithCarousel } from '@/components/molecules/image-with-carousel/image-with-carousel';
 import { ProvinceColumn } from '@/components/molecules/province-column/province-column';
 import { StatusCard } from '@/components/molecules/status-card/status-card';
@@ -78,6 +79,29 @@ const imageList = [
   { id: 1, src: '/images/mapi.png' },
   { id: 2, src: '/images/etienne.jpg' },
   { id: 3, src: '/images/mapi.png' }
+];
+
+const sampleImages = [
+  {
+    id: 1,
+    src: '/images/estate.jpg',
+    alt: 'Ảnh mẫu 1'
+  },
+  {
+    id: 2,
+    src: '/images/etienne.jpg',
+    alt: 'Ảnh mẫu 2'
+  },
+  {
+    id: 3,
+    src: '/images/estate.jpg',
+    alt: 'Ảnh mẫu 3'
+  },
+  {
+    id: 4,
+    src: '/images/etienne.jpg',
+    alt: 'Ảnh mẫu 4'
+  }
 ];
 
 const SECTIONS = [
@@ -165,6 +189,46 @@ const SECTIONS = [
           </div>
           <div className="col-span-3 relative">
             <ImageWithCarousel imageList={imageList} height={350} rounded="rounded-xl" />
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: 'Căn hộ',
+    bg: 'bg-gradient-to-br from-white via-indigo-50 to-indigo-100',
+    children: (
+      <div className="min-w-screen w-full">
+        <div className="w-full grid grid-cols-3">
+          <div className="text-black font-normal">
+            <div className="absolute bottom-[40%] -left-[140px]">
+              <h3 className="-rotate-90 text-7xl font-bold">LOCATION</h3>
+            </div>
+            <div className="pt-8 pb-4 pl-24">
+              <h2 className="text-2xl font-bold uppercase">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </h2>
+              <p className="text-sm">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit ea molestiae
+                quibusdam inventore. Eligendi ad nisi impedit, corporis magni sint saepe perferendis
+                delectus officiis. Quibusdam voluptate omnis itaque commodi voluptatum?
+              </p>
+              <div className="flex flex-col pt-4 px-4">
+                <StatusCard {...backupStatus} />
+                <StatusCard {...backupStatus} />
+                <StatusCard {...backupStatus} />
+                <StatusCard {...backupStatus} />
+                <StatusCard {...backupStatus} />
+              </div>
+            </div>
+          </div>
+          <div className="col-span-2 h-screen overflow-hidden">
+            <ImageCarouselVertical
+              images={sampleImages}
+              height={600}
+              className="h-[600px]"
+              rounded=""
+            />
           </div>
         </div>
       </div>
