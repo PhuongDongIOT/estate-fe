@@ -164,7 +164,7 @@ const estateItem: NewsCardProps = {
   image: '/images/estate.jpg',
   source: 'Báo Dân trí',
   title: 'Lý do Bộ Tài chính muốn áp thuế 20% trên lãi chuyển nhượng bất động sản',
-  url: '/images/estate.jpg',
+  url: '/SPR-xx',
   time: '23 hours ago',
   avatar: '/images/estate.jpg',
   category: 'Bất động sản',
@@ -180,7 +180,15 @@ const branchLocation = {
 };
 
 const propertyGuruInfo = {
-  logo: <img src={'/images/batdongsan-logo.svg'} alt="Logo" className="h-16" />,
+  logo: (
+    <Image
+      width={1920}
+      height={1080}
+      src={'/images/batdongsan-logo.svg'}
+      alt="Logo"
+      className="h-16"
+    />
+  ),
   companyName: 'CÔNG TY CỔ PHẦN PROPERTYGURU VIỆT NAM',
   address: `Tầng 31, Keangnam Hanoi Landmark Tower,\nPhường Yên Hòa, Thành phố Hà Nội, Việt Nam`,
   phones: ['(024) 3562 5939', '(024) 3562 5940'],
@@ -217,7 +225,7 @@ const subscribeProps = {
 };
 
 const HomePage = () => (
-  <div className="relative min-h-screen  bg-gradient-to-br from-white via-indigo-50 to-indigo-100 overflow-hidden">
+  <div className="relative min-h-screen bg-gradient-to-br from-white via-indigo-50 to-indigo-100 overflow-hidden">
     {/* <div className="fixed bottom-2 right-2">
       <AudioPlaylist
         songs={[
@@ -246,7 +254,7 @@ const HomePage = () => (
           <TitledSection title="Tin tức nổi bật">
             <div className="mx-auto grid grid-cols-1 md:grid-cols-3">
               <div className="grid grid-cols-1 md:col-span-2 md:grid-cols-2 gap-4 px-4 border-r border-gray-300/50">
-                <NewsCard {...estateItem} direction="vertical" />
+                <NewsCard {...estateItem} url="/xxx" direction="vertical" />
                 <div className="flex flex-col gap-4">
                   <NewsCard {...estateItem} />
                   <NewsCard {...estateItem} />

@@ -44,7 +44,9 @@ export function NewsCarousel({ items }: Props) {
             <div className="w-2/3 md:w-1/4 pr-4 flex-shrink-0 group" key={item.id}>
               <div className="overflow-hidden relative">
                 <div className="relative">
-                  <img
+                  <Image
+                    width={1920}
+                    height={1080}
                     src={item.image}
                     alt={item.title}
                     className="w-full h-[200px] object-cover"

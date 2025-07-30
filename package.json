@@ -26,11 +26,9 @@
   "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
   "dependencies": {
     "@t3-oss/env-nextjs": "0.12.0",
-    "clsx": "2.1.1",
     "next": "15.1.6",
     "react": "19.0.0-rc-65a56d0e-20241020",
     "react-dom": "19.0.0-rc-65a56d0e-20241020",
-    "tailwind-merge": "3.0.1",
     "zod": "3.24.1"
   },
   "devDependencies": {
@@ -56,6 +54,8 @@
     "@typescript-eslint/parser": "8.24.0",
     "autoprefixer": "10.4.20",
     "babel-jest": "29.7.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "eslint": "9.19.0",
@@ -76,14 +76,18 @@
     "jest-watch-typeahead": "2.2.2",
     "lint-staged": "15.4.3",
     "lucide-react": "^0.525.0",
+    "motion": "^12.23.11",
     "pinst": "3.0.0",
     "plop": "4.0.1",
     "postcss": "8.5.1",
     "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "0.6.11",
+    "radix-ui": "^1.2.0",
     "storybook": "^8.5.3",
+    "tailwind-merge": "^3.3.1",
     "tailwind-scrollbar": "3.1.0",
     "tailwindcss": "3.4.17",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.7.3"
   },
   "lint-staged": {

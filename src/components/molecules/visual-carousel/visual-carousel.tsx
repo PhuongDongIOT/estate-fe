@@ -3,6 +3,7 @@
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 import { useCallback } from 'react';
 
 type ImageItem = {
@@ -48,9 +49,11 @@ export function VisualCarousel({
               key={index}
               className={`flex-[0_0_80%] md:flex-[0_0_30%] px-2 relative group ${slideClassName}`}
             >
-              <img
+              <Image
                 src={src}
                 alt={`Slide ${index + 1}`}
+                width={1920}
+                height={1080}
                 className="w-full h-64 object-cover rounded-xl group-hover:scale-110 transactioon-all duration-300"
               />
               {label && (
