@@ -12,8 +12,8 @@ type PageProps = {
     slug: string;
   };
 };
-const Page = async ({ params }: PageProps) => {
-  const { slug } = await params;
+const Page = ({ params }: PageProps) => {
+  const { slug } = params;
 
   const isSPR = isSPRPrefix(slug);
 

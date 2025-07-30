@@ -154,7 +154,7 @@ type BlogDetailProps = {
   slug: string;
 };
 
-const BlogDetailPage = async ({ slug }: BlogDetailProps) => {
+const BlogDetailPage = ({ slug }: BlogDetailProps) => {
   return (
     <div>
       <section>
