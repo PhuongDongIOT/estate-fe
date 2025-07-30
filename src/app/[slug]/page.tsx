@@ -7,12 +7,7 @@ function isSPRPrefix(code: string): boolean {
   return pattern.test(code);
 }
 
-type PageProps = {
-  params: {
-    slug: string;
-  };
-};
-const Page = ({ params }: PageProps) => {
+const Page = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   const isSPR = isSPRPrefix(slug);
