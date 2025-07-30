@@ -1,6 +1,6 @@
+import { parseAsString, SearchParams, createSearchParamsCache } from 'nuqs/server';
 import BlogDetailPage from './_components/post-detail.page';
 import FullpageScroll from './_components/projects/fullpage-scroll';
-import { parseAsString, SearchParams, createSearchParamsCache } from 'nuqs/server';
 
 const slugSearchParams = {
   slug: parseAsString.withDefault('')
