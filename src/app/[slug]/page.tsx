@@ -4,7 +4,7 @@ import FullpageScroll from './_components/projects/fullpage-scroll';
 
 type PageHandler = {
   match: (slug: string) => boolean;
-  render: (slug: string) => JSX.Element;
+  render: (slug: string) => React.ReactNode;
 };
 
 const pageHandlers: PageHandler[] = [
