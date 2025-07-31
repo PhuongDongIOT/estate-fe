@@ -43,6 +43,7 @@
     "@storybook/nextjs": "^8.5.3",
     "@storybook/react": "^8.5.0",
     "@storybook/testing-library": "^0.2.2",
+    "@tanstack/react-table": "^8.21.3",
     "@testing-library/jest-dom": "6.6.3",
     "@testing-library/react": "16.0.1",
     "@testing-library/user-event": "14.6.1",

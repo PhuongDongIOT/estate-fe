@@ -101,6 +101,7 @@ const imageList = [
     label: 'Căn hộ'
   }
 ];
+
 const visualCarousel = {
   images: imageList,
   autoplayDelay: 2000,
@@ -256,8 +257,8 @@ const HomePage = () => (
               <div className="grid grid-cols-1 md:col-span-2 md:grid-cols-2 gap-4 px-4 border-r border-gray-300/50">
                 <NewsCard {...estateItem} url="/xxx" direction="vertical" />
                 <div className="flex flex-col gap-4">
-                  <NewsCard {...estateItem} />
-                  <NewsCard {...estateItem} />
+                  <NewsCard {...estateItem} url="/spx-xxx" />
+                  <NewsCard {...estateItem} url="/spl-xxx" />
                 </div>
               </div>
               <div className="grid grid-cols-1 gap-4 px-4 group">

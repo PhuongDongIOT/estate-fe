@@ -49,7 +49,7 @@ export function ImageCarouselVertical({
   };
 
   return (
-    <div className="relative max-h-screen">
+    <div className="relative max-h-screen group">
       <div className="relative mx-auto w-full">
         <div className={`overflow-hidden h-screen`} ref={emblaRef}>
           <div className="flex flex-col h-screen">
@@ -63,6 +63,26 @@ export function ImageCarouselVertical({
                     height={1080}
                     className="object-cover w-full h-full"
                   />
+                  <div className="absolute top-0 left-2 w-[1px] h-full py-8">
+                    <div className="w-[1px] h-full bg-white group-hover:w-0 transition-all duration-150"></div>
+                  </div>
+                  <div className="absolute top-0 right-2 w-[1px] h-full py-8">
+                    <div className="w-[1px] h-full bg-white group-hover:w-0 transition-all duration-150"></div>
+                  </div>
+                  <div className="bg-yellow-200/40 absolute w-0 h-0 -top-40 -left-40 transform rotate-45 group-hover:p-8 group-hover:w-80 group-hover:h-80 transition-all duration-300">
+                    <div className="w-0 group-hover:w-full h-full bg-yellow-200/60 group-hover:p-8 delay-200 duration-150 transition-all">
+                      <div className="w-0 group-hover:w-full h-full bg-yellow-200/80 group-hover:p-8 delay-300 duration-150 transition-all">
+                        <div className="w-0 group-hover:w-full h-full bg-yellow-200 delay-400 duration-150 transition-all"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-yellow-200/40 absolute w-0 h-0 -bottom-40 -right-40 transform rotate-45 group-hover:p-8 group-hover:w-80 group-hover:h-80 transition-all duration-300">
+                    <div className="w-0 group-hover:w-full h-full bg-yellow-200/60 group-hover:p-8 delay-200 duration-150 transition-all">
+                      <div className="w-0 group-hover:w-full h-full bg-yellow-200/80 group-hover:p-8 delay-300 duration-150 transition-all">
+                        <div className="w-0 group-hover:w-full h-full bg-yellow-200 delay-400 duration-150 transition-all"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
