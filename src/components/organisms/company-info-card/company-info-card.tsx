@@ -56,8 +56,8 @@ export const CompanyInfoCard: FC<CompanyInfoCardProps> = ({
           />
         </div>
         <div className="flex gap-2">
-          <Image src={googlePlaySrc} width={8} height={8} alt="Google Play" className="h-8" />
-          <Image src={appStoreSrc} alt="App Store" width={8} height={8} className="h-8" />
+          <Image src={googlePlaySrc} width={96} height={8} alt="Google Play" className="h-6" />
+          <Image src={appStoreSrc} alt="App Store" width={96} height={8} className="h-6" />
         </div>
       </div>
     </div>

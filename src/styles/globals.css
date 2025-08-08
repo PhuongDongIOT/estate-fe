@@ -1,3 +1,4 @@
+@import 'leaflet/dist/leaflet.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +27,11 @@
   .overlay-blend {
     mix-blend-mode: lighten;
     opacity: 0.6;
+  }
+
+  .incident-marker {
+    cursor: pointer;
+    z-index: 100;
   }
 }
 
@@ -117,4 +123,74 @@
   .animate-fade-in-up {
     animation: fade-in-up 0.8s ease-out forwards;
   }
+}
+
+.mapboxgl-ctrl-directions {
+  font-family: 'Inter', sans-serif;
+  /* background-color: #ffffffdd; */
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+
+.mapboxgl-ctrl-directions input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+/* .mapboxgl-ctrl-directions .mapbox-directions-profile {
+  display: none;
+} */
+
+.mapboxgl-ctrl-directions .mapbox-directions-profile {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 0px;
+}
+
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl-scale {
+  border: none;
+  font-weight: bold;
+  font-size: small;
+  background: transparent;
+}
+
+.mapboxgl-ctrl-directions .mapbox-directions-profile-button {
+  background-color: #f1f5f9;
+  color: #1d2434;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-directions .mapbox-directions-profile-button:hover {
+  background-color: #e2e8f0;
+}
+
+.mapboxgl-ctrl-directions .mapbox-directions-profile-button.is-active {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #1d4ed8;
+}
+
+.mapboxgl-ctrl-directions .mapbox-directions-clear-route {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 6px;
+  padding: 5px 10px;
+}
+
+.mapboxgl-ctrl-directions .mapbox-directions-instructions {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 8px;
 }
